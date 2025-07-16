@@ -1,0 +1,37 @@
+	// Painel de formulário (inputs)
+        JPanel form = new JPanel(new GridLayout(5, 2));
+	form.setBorder(BorderFactory.createTitledBorder("Dados da Nota"));
+
+
+        form.add(new JLabel("ID Turma:"));
+        txtTurma = new JTextField();
+        form.add(txtTurma);
+
+	form.add(new JLabel("Matrícula Aluno:"));
+        txtMatricula = new JTextField();
+        form.add(txtMatricula);
+
+        form.add(new JLabel("Aluno:"));
+        txtAluno = new JTextField();
+        form.add(txtAluno);
+
+        form.add(new JLabel("Nota:"));
+        txtNota = new JTextField();
+        form.add(txtNota);
+
+
+	// Botões de ação
+
+        JButton btnSalvar = new JButton("Registrar Nota");
+        btnSalvar.addActionListener(this::salvar);
+        form.add(btnSalvar);
+
+        JButton btnListar = new JButton("Listar Notas");
+        btnListar.addActionListener(e -> listar());
+        form.add(btnListar);
+
+        add(form, BorderLayout.NORTH);
+
+        txtLista = new JTextArea();
+        add(new JScrollPane(txtLista), BorderLayout.CENTER);
+        
